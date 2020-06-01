@@ -9,12 +9,12 @@ import {
   Viro3DObject,
 } from 'react-viro'
 
-const portalVRX = require('../assets/portal/portal_ship.vrx')
-const portalDiffuse = require('../assets/portal/portal_ship_diffuse.png')
-const portalNormal = require('../assets/portal/portal_ship_normal.png')
-const portaSpecular = require('../assets/portal/portal_ship_specular.png')
+import portalVRX from '../assets/portal/portal_ship.vrx'
+import portalDiffuse from '../assets/portal/portal_ship_diffuse.png'
+import portalNormal from '../assets/portal/portal_ship_normal.png'
+import portaSpecular from '../assets/portal/portal_ship_specular.png'
 
-const image360 = require('../assets/360_island.jpg')
+import image360 from '../assets/360_island.jpg'
 
 const ARScene = () => {
   return (
