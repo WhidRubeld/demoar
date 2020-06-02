@@ -11,10 +11,10 @@ import {
 } from 'react-viro'
 
 // model
-import ModelAnimation from '../assets/model/icecreamman_anim_a.vrx'
-import ModelDiffuse from '../assets/model/icecreamman_diffuse.png'
-import ModelNormal from '../assets/model/icecreamman_normal.png'
-import ModelSpecular from '../assets/model/icecreamman_specular.png'
+import Model from '../assets/model/Hip.vrx'
+import ModelDiffuse from '../assets/model/FatElvis_diffuse.jpg'
+import ModelNormal from '../assets/model/FatElvis_normal.jpg'
+import ModelMap from '../assets/model/Elvis_FaceAnimMap.png'
 
 // scene
 const VRScene = () => {
@@ -24,7 +24,6 @@ const VRScene = () => {
     <ViroScene>
       <ViroSkyBox color="#fff" />
       <ViroAmbientLight color="#ffffff" intensity={200} />
-
       <ViroNode
         position={[0, -1, -2]}
         dragType="FixedToWorld"
@@ -44,13 +43,13 @@ const VRScene = () => {
         />
 
         <Viro3DObject
-          source={ModelAnimation}
-          resources={[ModelDiffuse, ModelNormal, ModelSpecular]}
+          source={Model}
+          resources={[ModelDiffuse, ModelNormal, ModelMap]}
           position={[0, 0, 0]}
-          scale={[0.5, 0.5, 0.5]}
+          scale={[0.008, 0.008, 0.008]}
           type="VRX"
           onClick={() => setAnimation(!animation)}
-          animation={{ name: '02', run: animation, loop: true }}
+          animation={{ name: 'mixamo.com', run: animation, loop: true }}
         />
 
         <ViroSurface
@@ -66,5 +65,3 @@ const VRScene = () => {
 }
 
 export default VRScene
-
-

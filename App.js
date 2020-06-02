@@ -28,7 +28,7 @@ class App extends React.Component {
   _getExperienceSelector() {
     return (
       <View style={styles.outer}>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="light-content" />
         <View style={styles.inner}>
           <Text style={styles.title}>Выбор сцены</Text>
 
