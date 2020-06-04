@@ -12,18 +12,18 @@ import {
   ViroNode,
 } from 'react-viro'
 
-import portalVRX from '../assets/portal/portal_ship.vrx'
-import portalDiffuse from '../assets/portal/portal_ship_diffuse.png'
-import portalNormal from '../assets/portal/portal_ship_normal.png'
-import portaSpecular from '../assets/portal/portal_ship_specular.png'
+import portalVRX from '../../assets/portal/portal_ship.vrx'
+import portalDiffuse from '../../assets/portal/portal_ship_diffuse.png'
+import portalNormal from '../../assets/portal/portal_ship_normal.png'
+import portaSpecular from '../../assets/portal/portal_ship_specular.png'
 
 // model
-import Model from '../assets/model/Hip.vrx'
-import ModelDiffuse from '../assets/model/FatElvis_diffuse.jpg'
-import ModelNormal from '../assets/model/FatElvis_normal.jpg'
-import ModelMap from '../assets/model/Elvis_FaceAnimMap.png'
+import Model from '../../assets/model/Hip.vrx'
+import ModelDiffuse from '../../assets/model/FatElvis_diffuse.jpg'
+import ModelNormal from '../../assets/model/FatElvis_normal.jpg'
+import ModelMap from '../../assets/model/Elvis_FaceAnimMap.png'
 
-import image360 from '../assets/360_island.jpg'
+import image360 from '../../assets/360_island.jpg'
 
 const ARScene = () => {
   const [animation, setAnimation] = React.useState(true)

@@ -11,10 +11,10 @@ import {
 } from 'react-viro'
 
 // model
-import Model from '../assets/model/Hip.vrx'
-import ModelDiffuse from '../assets/model/FatElvis_diffuse.jpg'
-import ModelNormal from '../assets/model/FatElvis_normal.jpg'
-import ModelMap from '../assets/model/Elvis_FaceAnimMap.png'
+import Model from '../../assets/model/Hip.vrx'
+import ModelDiffuse from '../../assets/model/FatElvis_diffuse.jpg'
+import ModelNormal from '../../assets/model/FatElvis_normal.jpg'
+import ModelMap from '../../assets/model/Elvis_FaceAnimMap.png'
 
 // scene
 const VRScene = () => {

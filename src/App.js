@@ -6,8 +6,8 @@ import { Text, View, StyleSheet, Button } from 'react-native'
 
 import { ViroVRSceneNavigator, ViroARSceneNavigator } from 'react-viro'
 
-import ARScene from './js/ARScene'
-import VRScene from './js/VRScene'
+import ARScene from './screens/ARScene'
+import VRScene from './screens/VRScene'
 
 const sharedProps = { apiKey: '' }
 
