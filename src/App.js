@@ -15,63 +15,45 @@ const UNSET = 'UNSET'
 const VR_NAVIGATOR = 'VR'
 const AR_NAVIGATOR = 'AR'
 
-class App extends React.Component {
-  constructor() {
-    super()
+const App = () => {
+  const [navigator, setNavigator] = React.useState(UNSET)
 
-    this.state = {
-      navigator: UNSET,
-      sharedProps,
-    }
-  }
+  const renderMenu = () => (
+    <View style={styles.outer}>
+      <StatusBar barStyle="light-content" />
+      <View style={styles.inner}>
+        <Text style={styles.title}>Выбор сцены</Text>
 
-  _getExperienceSelector() {
-    return (
-      <View style={styles.outer}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.inner}>
-          <Text style={styles.title}>Выбор сцены</Text>
-
-          <Button
-            title="Дополненная реальность"
-            onPress={() => this.setState({ navigator: AR_NAVIGATOR })}
-          />
-          <Button
-            title="Виртуальная реальность"
-            onPress={() => this.setState({ navigator: VR_NAVIGATOR })}
-          />
-        </View>
+        <Button
+          title="Дополненная реальность"
+          onPress={() => setNavigator(AR_NAVIGATOR)}
+        />
+        <Button
+          title="Виртуальная реальность"
+          onPress={() => setNavigator(VR_NAVIGATOR)}
+        />
       </View>
-    )
-  }
+    </View>
+  )
 
-  _getARNavigator() {
-    return (
-      <ViroARSceneNavigator
-        {...this.state.sharedProps}
-        initialScene={{ scene: ARScene }}
-      />
-    )
-  }
+  const renderVRNavigator = () => (
+    <ViroVRSceneNavigator
+      {...sharedProps}
+      initialScene={{ scene: VRScene }}
+      onExitViro={() => setNavigator(UNSET)}
+    />
+  )
 
-  _getVRNavigator() {
-    return (
-      <ViroVRSceneNavigator
-        {...this.state.sharedProps}
-        initialScene={{ scene: VRScene }}
-        onExitViro={() => this.setState({ navigator: UNSET })}
-      />
-    )
-  }
+  const renderARNavigator = () => (
+    <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: ARScene }} />
+  )
 
-  render() {
-    if (this.state.navigator == UNSET) {
-      return this._getExperienceSelector()
-    } else if (this.state.navigator == VR_NAVIGATOR) {
-      return this._getVRNavigator()
-    } else if (this.state.navigator == AR_NAVIGATOR) {
-      return this._getARNavigator()
-    }
+  if (navigator == UNSET) {
+    return renderMenu()
+  } else if (navigator == VR_NAVIGATOR) {
+    return renderARNavigator()
+  } else if (navigator == AR_NAVIGATOR) {
+    return renderVRNavigator()
   }
 }
 
