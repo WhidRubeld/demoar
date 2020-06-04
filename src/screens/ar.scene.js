@@ -30,7 +30,6 @@ const ARScene = () => (
       </ViroPortal>
       <Viro360Image source={image360} />
       <ModelComponent
-        position={[0, -1, -2]}
         dragType="FixedToWorld"
         onDrag={() => {}}
       />

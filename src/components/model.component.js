@@ -51,4 +51,8 @@ const ModelComponent = (props) => {
   )
 }
 
+ModelComponent.defaultProps = {
+  position: [0, -1, -2]
+}
+
 export default ModelComponent

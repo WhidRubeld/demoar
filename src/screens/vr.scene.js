@@ -9,7 +9,7 @@ const VRScene = () => (
   <ViroScene>
     <ViroSkyBox color="#fff" />
     <ViroAmbientLight color="#ffffff" intensity={200} />
-    <ModelComponent position={[0, -1, -2]} />
+    <ModelComponent />
   </ViroScene>
 )
 
