@@ -5,13 +5,14 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
 } from 'react-native'
 
 import { ViroVRSceneNavigator, ViroARSceneNavigator } from 'react-viro'
 
 import ARScene from './screens/ar.scene'
 import VRScene from './screens/vr.scene'
+
+import Button from './components/button'
 
 const sharedProps = { apiKey: '' }
 
@@ -85,6 +86,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
   },
+  textStyle: {
+    alignSelf: 'center',
+    color: '#6B7794',
+    fontSize: 16,
+    fontWeight: '600',
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  buttonStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#6B7794',
+    margin: 5,
+    marginRight: 5
+  }
 })
 
 export default App
