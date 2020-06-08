@@ -20,6 +20,7 @@ const UNSET = 'UNSET'
 const VR_NAVIGATOR = 'VR'
 const AR_NAVIGATOR = 'AR'
 
+
 const App = () => {
   const [navigator, setNavigator] = React.useState(UNSET)
 
@@ -66,6 +67,7 @@ const App = () => {
   )
 }
 
+
 const styles = StyleSheet.create({
   viroContainer: {
     flex: 1,
@@ -85,24 +87,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     textAlign: 'center',
     fontSize: 25,
-  },
-  textStyle: {
-    alignSelf: 'center',
-    color: '#6B7794',
-    fontSize: 16,
-    fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10
-  },
-  buttonStyle: {
-    flex: 1,
-    alignSelf: 'stretch',
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#6B7794',
-    margin: 5,
-    marginRight: 5
   }
 })
 

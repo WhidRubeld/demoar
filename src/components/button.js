@@ -12,8 +12,8 @@ const Button = ({title, style, ...props}) => {
 const styles = StyleSheet.create({
     textStyle: {
       alignSelf: 'center',
-      color: '#6B7794',
-      fontSize: 16,
+      color: '#ffffff',
+      fontSize: 18,
       fontWeight: '600',
       paddingTop: 10,
       paddingBottom: 10
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     buttonStyle: {
       flex: 1,
       alignSelf: 'stretch',
-      backgroundColor: '#fff',
-      borderWidth: 1,
-      borderRadius: 5,
+      backgroundColor: '#878787',
+      borderWidth: 3,
+      borderRadius: 25,
       borderColor: '#6B7794',
-      margin: 5,
-      marginRight: 5
+      margin: 40,
+      marginRight: 40
     }
   })
 export default Button
