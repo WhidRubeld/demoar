@@ -34,7 +34,7 @@ const ModelComponent = (props) => {
         source={Model}
         resources={[ModelDiffuse, ModelNormal, ModelMap]}
         position={[0, 0, 0]}
-        scale={[0.008, 0.008, 0.008]}
+        scale={[1/2e2, 1/2e2, 1/2e2]}
         type="VRX"
         onClick={() => setAnimation(!animation)}
         animation={{ name: 'mixamo.com', run: animation, loop: true }}
