@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+
 const Button = ({title, style, ...props}) => {
   const { buttonStyle, textStyle } = styles
-  
   return (
     <TouchableOpacity {...props} style={[buttonStyle, style]} >
       <Text style={textStyle}>{title}</Text>
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     buttonStyle: {
       flex: 1,
       alignSelf: 'stretch',
-      backgroundColor: '#878787',
+      backgroundColor: '#8385a3',
       borderWidth: 3,
       borderRadius: 25,
       borderColor: '#6B7794',
-      margin: 40,
-      marginRight: 40
+      margin: 20,
+      paddingVertical: 10,
     }
   })
 export default Button
