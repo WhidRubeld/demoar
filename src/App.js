@@ -25,25 +25,23 @@ const App = () => {
   const [navigator, setNavigator] = React.useState(UNSET)
 
   const renderMenu = () => (
-    <View style={styles.outer}>
+    <ImageBackground
+      source={require('../assets/imageBackground.jpg')}
+      style={styles.container}
+    >
       <StatusBar barStyle="dark-content" />
-      <ImageBackground
-        source={require('../assets/imageBackground.jpg')}
-        style={styles.inner}
-      >
-        <Text style={styles.title}>Выберите курс обучения</Text>
+      <Text style={styles.title}>Выберите курс обучения</Text>
 
-        <Button
-          title="Дополненная реальность"
-          onPress={() => setNavigator(AR_NAVIGATOR)}
-          style={{ marginTop: 130 }}
-        />
-        <Button
-          title="Виртуальная реальность"
-          onPress={() => setNavigator(VR_NAVIGATOR)}
-        />
-      </ImageBackground>
-    </View>
+      <Button
+        title="Дополненная реальность"
+        onPress={() => setNavigator(AR_NAVIGATOR)}
+        style={{ marginTop: 130, marginBottom: 30 }}
+      />
+      <Button
+        title="Виртуальная реальность"
+        onPress={() => setNavigator(VR_NAVIGATOR)}
+      />
+    </ImageBackground>
   )
 
   const renderVRNavigator = () => (
@@ -64,18 +62,10 @@ const App = () => {
 }
 
 const styles = StyleSheet.create({
-  viroContainer: {
+  container: {
     flex: 1,
-  },
-  outer: {
-    flex: 1,
-    flexDirection: 'row',
     alignItems: 'center',
-  },
-  inner: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
+    padding: 20,
   },
   title: {
     paddingTop: 290,

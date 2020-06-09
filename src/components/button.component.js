@@ -17,18 +17,14 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 18,
     fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10,
   },
   buttonStyle: {
-    flex: 1,
     alignSelf: 'stretch',
     backgroundColor: '#8385a3',
     borderWidth: 3,
     borderRadius: 25,
     borderColor: '#6B7794',
-    margin: 20,
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
 })
 
