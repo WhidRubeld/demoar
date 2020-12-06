@@ -2,9 +2,10 @@ import React from 'react'
 
 import {
   ViroSpotLight,
-  ViroSurface,
   Viro3DObject,
   ViroNode,
+  ViroQuad,
+  ViroSound,
 } from 'react-viro'
 
 import Model from '../../assets/model/Hip.vrx'
@@ -12,11 +13,20 @@ import ModelDiffuse from '../../assets/model/FatElvis_diffuse.jpg'
 import ModelNormal from '../../assets/model/FatElvis_normal.jpg'
 import ModelMap from '../../assets/model/Elvis_FaceAnimMap.png'
 
-const ModelComponent = (props) => {
-  const [animation, setAnimation] = React.useState(true)
+import AudioFile from '../../assets/audio/sound.mp3'
+
+const ModelComponent = ({ volume, ...props }) => {
+  const [animation, setAnimation] = React.useState(false)
 
   return (
     <ViroNode {...props}>
+      <ViroSound
+        paused={!animation}
+        muted={false}
+        source={AudioFile}
+        loop={true}
+        volume={volume}
+      />
       <ViroSpotLight
         innerAngle={5}
         outerAngle={25}
@@ -40,7 +50,7 @@ const ModelComponent = (props) => {
         animation={{ name: 'mixamo.com', run: animation, loop: true }}
       />
 
-      <ViroSurface
+      <ViroQuad
         rotation={[-90, 0, 0]}
         position={[0, -0.001, 0]}
         width={2.5}

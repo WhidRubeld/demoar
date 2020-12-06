@@ -8,6 +8,8 @@ import {
   ImageBackground,
 } from 'react-native'
 
+import Slider from 'react-native-slider'
+
 import { ViroVRSceneNavigator, ViroARSceneNavigator } from 'react-viro'
 
 import ARScene from './screens/ar.scene'
@@ -23,6 +25,8 @@ const AR_NAVIGATOR = 'AR'
 
 const App = () => {
   const [navigator, setNavigator] = React.useState(UNSET)
+
+  const [volume, setVolume] = React.useState(0.8)
 
   const renderMenu = () => (
     <ImageBackground
@@ -41,15 +45,38 @@ const App = () => {
         title="Виртуальная реальность"
         onPress={() => setNavigator(VR_NAVIGATOR)}
       />
+      <View style={styles.audioCard}>
+        <View style={styles.audioRow}>
+          <Text style={styles.subtitle}>Общая громкость</Text>
+          <Text style={styles.volumeText}>{parseInt(volume * 100, 10)}%</Text>
+        </View>
+        <Slider
+          value={volume}
+          onValueChange={setVolume}
+          minimumValue={0}
+          maximumValue={1}
+          style={{ width: '100%' }}
+        />
+      </View>
     </ImageBackground>
   )
 
   const renderVRNavigator = () => (
-    <ViroVRSceneNavigator {...sharedProps} initialScene={{ scene: VRScene }} />
+    <ViroVRSceneNavigator
+      {...sharedProps}
+      initialScene={{
+        scene: (props) => <VRScene {...props} volume={volume} />,
+      }}
+    />
   )
 
   const renderARNavigator = () => (
-    <ViroARSceneNavigator {...sharedProps} initialScene={{ scene: ARScene }} />
+    <ViroARSceneNavigator
+      {...sharedProps}
+      initialScene={{
+        scene: (props) => <ARScene {...props} volume={volume} />,
+      }}
+    />
   )
 
   if (navigator == UNSET) {
@@ -64,14 +91,34 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     padding: 20,
   },
   title: {
-    paddingTop: 290,
+    marginTop: 150,
     paddingBottom: 20,
     textAlign: 'center',
     fontSize: 25,
+  },
+  audioCard: {
+    marginTop: 30,
+    padding: 20,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 12,
+    borderColor: '#ccc',
+  },
+  audioRow: {
+    marginBottom: 10,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  subtitle: {
+    fontSize: 14,
+  },
+  volumeText: {
+    fontSize: 18,
   },
 })
 
