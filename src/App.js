@@ -34,7 +34,7 @@ const App = () => {
       style={styles.container}
     >
       <StatusBar barStyle="dark-content" />
-      <Text style={styles.title}>Выберите курс обучения</Text>
+      <Text style={styles.title}>Выберите режим</Text>
 
       <Button
         title="Дополненная реальность"
